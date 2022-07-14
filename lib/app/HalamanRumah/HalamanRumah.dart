@@ -1,12 +1,11 @@
 // ignore_for_file: file_names, non_constant_identifier_names
 
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../api/ColorsApi.dart';
 import '../Database Penyakit/listpenyakit.dart';
+import '../anamnesis/deksripsilesi.dart';
 
 class HalamanRumah extends StatefulWidget {
   const HalamanRumah({Key? key}) : super(key: key);
@@ -18,12 +17,7 @@ class HalamanRumah extends StatefulWidget {
 class _HalamanRumahState extends State<HalamanRumah> {
   @override
   Widget build(BuildContext context) {
-    FirebaseFirestore firestore = FirebaseFirestore.instance;
-    CollectionReference userdata = firestore.collection('user');
 
-    final FirebaseAuth auth = FirebaseAuth.instance;
-    final User? user = auth.currentUser;
-    final useremail = user!.email;
 
     return Scaffold(
       backgroundColor: Colors.white,
@@ -69,14 +63,14 @@ class _HalamanRumahState extends State<HalamanRumah> {
                                         vertical: 32, horizontal: 32),
                                     child: Center(
                                         child: Text(
-                                          'Database',
+                                          'Anamnesis',
                                           style: TextStyle(color: Colors.white),
                                         ),),
                                   ))),
                           onTap: () {
                             Navigator.push(context,
                                 MaterialPageRoute(builder: (context) {
-                                  return const ListPenyakit();
+                                  return const RekamMedis();
                                 }));
                           },
                         )),Card(
