@@ -1,6 +1,6 @@
 # project_om
 
-A new Flutter project.
+project OM ni guys, senggol dong
 
 ## Getting Started
 
